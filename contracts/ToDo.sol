@@ -3,11 +3,11 @@ pragma solidity ^0.4.23;
 contract ToDo {
     address public owner;
     address [] public boss;
-    uint public projectDeadline = block.timestamp + 10 * 1 days; // default deadline is 10 days
-
+    uint public projectDeadline = block.timestamp + 10 * 1 days;
+    
     mapping (address => uint) public taskAdded;
     mapping (address => bool) public addedTask;
-
+    
     function timeRemain() public view returns (uint) {
         return (projectDeadline - now) / 3600;
     }
@@ -69,15 +69,35 @@ contract ToDo {
     function checkDone(uint _taskId) public {
         require(taskList[_taskId].boss == msg.sender);
         require(addedTask[msg.sender] == true);
+        require(!taskList[_taskId].done);
         
         taskList[_taskId].done = true;
         addedTask[msg.sender] = false;
         owner.transfer(taskList[_taskId].bounty * 1 ether);
     }
     
-    function getTaskAdded() public view returns(string, string, uint) {
+    // function getTaskAdded() public view returns(string, string, uint) {
+    //     require(containArray(msg.sender));
+    //     require(addedTask[msg.sender] == true);
+    //     return (taskList[taskAdded[msg.sender]].name, taskList[taskAdded[msg.sender]].content, taskList[taskAdded[msg.sender]].bounty);
+    // }
+    
+    function getIdTaskAdded() public view returns (uint) {
         require(containArray(msg.sender));
         require(addedTask[msg.sender] == true);
-        return (taskList[taskAdded[msg.sender]].name, taskList[taskAdded[msg.sender]].content, taskList[taskAdded[msg.sender]].bounty);
+        
+        if(!taskList[taskAdded[msg.sender]].done) {
+            return taskAdded[msg.sender];
+        }
+    }
+    
+    function getNameTaskAdded() public view returns (string) {
+        require(containArray(msg.sender));
+        
+        if(addedTask[msg.sender] == true && !taskList[taskAdded[msg.sender]].done) {
+            return taskList[taskAdded[msg.sender]].name;
+        } else {
+            return("You have not create a task yet!");
+        }
     }
 }
