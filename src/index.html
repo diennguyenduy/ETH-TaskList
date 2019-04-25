@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+        <link href="css/index.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="col-xl-12">
+                <h1 id="page-tittle">Task List</h1>
+
+                <div class="col-md-6 text-center">
+                    <div class="card-counter player">
+                        <a href="../user.html"><h5>Developer</h5></a>
+                    </div>
+                </div>
+
+                <hr/>
+                <div class="row text-center"> 
+                    <h5>Địa chỉ nhân viên:</h5>
+                    <h5 id="dev-address"></h5>
+                </div>
+                <br>
+                <div class="row text-center">
+                    <h5>Thời gian còn lại: </h5>
+                    <h5 id="project-deadline"></h5>
+                    <h5>(giờ)</h5>
+                </div>
+
+                <hr/>
+                <div class = "row">
+                <div class="col-xl-6">
+                    <h3 id="task-tittle">Tạo task</h3>
+                    <hr/>
+                    <br>
+                    <div class="form-group">
+                        <label for="">Tên:</label>
+                        <input type="text" class="form-control" id="task-name" placeholder="Enter name of task">
+
+                        <label for="">Nội dung:</label>
+                        <input type="text" class="form-control" id="task-content" placeholder="Enter content of task">
+
+                        <label for="">Phần thưởng (đơn vị ETH):</label>
+                        <input type="text" class="form-control" id="task-bounty" placeholder="Enter bouty for task">
+
+                        <br>
+                        <button type="button" class="btn submit btn-warning">Create</button>
+                    </div>
+                </div>
+
+                <div class="col-xl-6">
+                    <h3 id="task-tittle">Xác nhận task</h3>
+                    <hr/>
+
+                    <div class="row text-center">
+                        <div class="col-xl-2">
+                            <h5>ID</h5>
+                            <hr/>
+                            <h6 id="task-id"></h6>
+                        </div>
+                        <div class="col-xl-4">
+                            <h5>Name</h5>
+                            <hr/>
+                            <h6 id="taskName"></h6>
+                            <button type="button" class="btn check-done btn-danger">Confirm</button>
+                        </div>
+                    </div>
+<!--
+                    <br>
+                    <div class="form-group row">
+                        <label for="inputTaskNumber" class="col-sm-4 col-form-label">Xác nhận task số:</label>
+                        <div class="col-xl-6">
+                            <input type="text" class="form-control" id="inputTaskNumber" placeholder="Enter task number">
+                            <br>
+                            <button type="button" class="btn check-done btn-danger">Confirm</button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/web3.min.js"></script>
+        <script src="js/App.js"></script>
+    </body>
+
+</html>

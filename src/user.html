@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+        <style>
+            body {
+                font-family: Times;
+            }
+
+            .icon-bar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+            }
+
+            .icon-bar a {
+                float: left;
+                width: 20%;
+                text-align: center;
+                padding: 12px 0;
+                transition: all 0.3s ease;
+                color: white;
+                font-size: 36px;
+            }
+
+            .icon-bar a:hover {
+                background-color: #000;
+            }
+
+            .active {
+                background-color: #4CAF50;
+            }
+
+            #page-tittle {
+                margin: 3%;
+            }
+
+            .add-boss {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="col-xl-12 text-center">
+                <h1 id="page-tittle">Task List</h1>
+            </div>
+
+            <div class="col-md-6 text-center">
+                    <div class="card-counter boss">
+                        <a href="../index.html"><h5>Boss</h5></a>
+                    </div>
+            </div>
+
+            <hr/>
+
+            <div class="col-xl-6">
+                <div class="add-new-boss">
+                    <label for="boss">Địa chỉ của sếp:</label>
+                    <span><input type="text" id="boss-address" placeholder="Enter an address"> </span>
+                    <span><button type="button" class="btn add-boss btn-success">Add</button> </span>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/web3.min.js"></script>
+        <script src="js/App.js"></script>
+    </body>
+
+</html>
